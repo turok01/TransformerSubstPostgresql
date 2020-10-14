@@ -1,0 +1,1 @@
+web: java -Dserver.port=${PORT:7373} -jar target/TransformerSubstPostgresql-0.0.1-SNAPSHOT.jar
