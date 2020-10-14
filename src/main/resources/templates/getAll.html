@@ -6,7 +6,9 @@
     <link rel="stylesheet" th:href="@{/styles.css}" />
 <body>
 <img th:src="@{/images/MPShome.png}"/>
-
+<form action="/">
+    <button>Домой</button>
+</form>
 <form method="POST" th:action="@{/logout}">
     <input type="submit" value="Logout">
 </form>
