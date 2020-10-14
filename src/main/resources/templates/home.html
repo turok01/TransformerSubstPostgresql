@@ -7,11 +7,16 @@
 </head>
 <body>
 <h1>Программа</h1>
-<form action="/select">
+<form action="/getall">
     <button>К общему списку</button>
     <a th:href="@{/getall}" id="on Main"></a><br/>
 </form>
 <img th:src="@{/images/MPSHome.png}">
 
 </body>
+<form method="GET" th:action="@{/populate}">
+    <div>
+        <button>Заполнить БД </button>
+    </div>
+</form>
 </html>
