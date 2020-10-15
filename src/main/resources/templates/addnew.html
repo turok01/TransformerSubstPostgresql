@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MPS</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form action="/select">
+    <button>К общему списку</button>
+    <a th:href="@{/select}" id="on Main"></a><br/>
+</form>
+<form method="POST" th:action="@{/addnew}" th:object="${newSubst}">
+
+    <div th:if="${#fields.hasErrors()}">
+        <span class="validationError">
+        Please correct the problems below and resubmit.
+        </span>
+    </div>
+    <br/>
+
+    <label for="nameSubst">Название подстанции: </label>
+    <input type="text" th:field="*{nameSubst}"/>
+    <span class="validationError" th:if="${#fields.hasErrors('nameSubst')}"
+          th:errors="*{nameSubst}">Name Error</span>
+    <br/>
+    <label for="ip">IP-адрес подстанции: </label>
+    <input type="text" th:field="*{IP}"/>
+    <span class="validationError" th:if="${#fields.hasErrors('IP')}"
+          th:errors="*{IP}">IP Error</span>
+    <br/>
+    <label for="zone">Зона обслуживания (район): </label>
+    <input type="text" th:field="*{zone}"/>
+    <span class="validationError" th:if="${#fields.hasErrors('zone')}"
+          th:errors="*{zone}">Zone Error</span>
+    <br/>
+    <div>
+        <button>Добавить</button>
+    </div>
+</form>
+</body>
+</html>
